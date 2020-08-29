@@ -1,11 +1,11 @@
-// package ca.fantasybasketball.teamweeklystats;
+package ca.finappws.finappws;
 // import ca.fantasybasketball.teamweeklystats.model.Player;
 // import ca.fantasybasketball.teamweeklystats.stats.PlayerWeeklyTotal;
-// import ca.fantasybasketball.teamweeklystats.readers.ReadCSV;
-// import ca.fantasybasketball.teamweeklystats.model.Roster;
+import ca.finappws.readers.ReadCSV;
+import ca.finappws.model.Stock;
 // import ca.fantasybasketball.teamweeklystats.stats.AddStats;
 // import ca.fantasybasketball.teamweeklystats.model.Stats;
-// import java.io.IOException;
+import java.io.IOException;
 
 
 //
@@ -15,7 +15,7 @@ public class FinAppWS {
         Portfolio portfolio = ReadCSV.CSV_Reader("/users/jin/work/FinAppWS/stocks.csv");
         double totalValue = 0;
         for(Stock stock : portfolio.getStocks()) {
-            double stockTotalValue = stock.getTotalValue();
+            double stockTotalValue = stock.getTotalVal();
             totalValue = stockTotalValue + totalValue;
         }
 
